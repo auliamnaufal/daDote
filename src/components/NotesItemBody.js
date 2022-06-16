@@ -1,4 +1,6 @@
 import React from "react";
+import NotesItemArchiveButton from "./NotesItemArchiveButton";
+import NotesItemDeleteButton from "./NotesItemDeleteButton";
 
 const NotesItemBody = ({ title, body, formattedCreatedAt }) => {
 	return (
