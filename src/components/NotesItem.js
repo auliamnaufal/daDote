@@ -3,10 +3,10 @@ import NotesItemBody from "./NotesItemBody";
 import NotesItemArchiveButton from "./NotesItemArchiveButton";
 import NotesItemDeleteButton from "./NotesItemDeleteButton";
 
-const NotesItem = ({ title, body, createdAt, dateFormatter }) => {
+const NotesItem = ({ title, body, createdAt }) => {
 	return (
 		<div className="notes-item">
-			<NotesItemBody title={title} body={body} formattedCreatedAt={() => dateFormatter(createdAt)} />
+			<NotesItemBody title={title} body={body} createdAt={createdAt} />
 			<div className="notes-item__actions">
 				<NotesItemDeleteButton />
 				<NotesItemArchiveButton />

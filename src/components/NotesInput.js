@@ -15,6 +15,7 @@ class NotesInput extends React.Component {
 			<form className="notes-input">
 				<input type="text" placeholder="Your notes title..." />
 				<textarea type="text" placeholder="Type your notes here" />
+				<input type="submit" value="Add Note" />
 			</form>
 		)
 	}
