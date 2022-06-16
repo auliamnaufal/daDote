@@ -1,6 +1,7 @@
 import React from "react";
 import { getInitialData, showFormattedDate } from "../utils/index"
 import NotesNavbar from "./NotesNavbar";
+import NotesInput from "./NotesInput";
 
 class NotesApp extends React.Component {
 	constructor(props) {
@@ -15,6 +16,14 @@ class NotesApp extends React.Component {
 			<div className="notes-app">
 				<NotesNavbar />
 				<h1>Add Notes</h1>
+
+				<NotesInput />
+				{/* Input Field */
+
+				/* Notes */
+					/* Active Notes */
+					/* Arcivve Notes */
+				/**/}
 
 			</div>
 		)
