@@ -18,7 +18,7 @@ class NotesApp extends React.Component {
 				<h1>Add Notes</h1>
 
 				<NotesInput />
-				{/* Input Field */
+				{
 
 				/* Notes */
 					/* Active Notes */
