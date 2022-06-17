@@ -29,9 +29,12 @@ body {
 
 .notes-body {
   width: 100%;
+  height: calc(100vh - (60px + 50px));
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
+
+/** NOTES INPUT */
 
 .notes-input {
   width: 100%;
@@ -101,4 +104,89 @@ body {
   transform: translate(-3px, 5px);
   box-shadow: 0px 0px 0 rgb(0, 0, 0);
   cursor: pointer;
+}
+
+/** NOTES LISTS */
+
+.notes-lists {
+  width: 100%;
+  padding: 1px;
+  background-color: #000;
+  overflow: scroll;
+}
+
+.notes-lists input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+.notes-lists h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.notes-lists .notes-list-item {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1px;
+}
+
+.notes-item {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  position: relative;
+}
+
+.notes-item__actions {
+  display: flex;
+  margin-top: 20px;
+}
+
+.notes-item__button {
+  position: absolute;
+  bottom: 5px;
+  padding: 5px 10px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.delete {
+  color: indianred;
+  left: 5%;
+}
+
+.archive {
+  color: burlywood;
+  right: 5%;
+}
+
+.notes-item-body h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #000;
+}
+
+.notes-item-body .notes-item-body__createdAt {
+  font-size: .7rem;
+  font-weight: 400;
+  color: rgb(135, 135, 135);
+  margin-bottom: 5px;
+}
+
+.notes-item-body .notes-item-body__body {
+  font-size: .6rem;
+  font-weight: 500;
+  color: rgb(75, 75, 75);
+  margin-bottom: 200px;
 }
