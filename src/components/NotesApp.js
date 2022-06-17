@@ -2,8 +2,7 @@ import React from "react";
 import { getInitialData, showFormattedDate } from "../utils/index"
 import NotesNavbar from "./NotesNavbar";
 import NotesInput from "./NotesInput";
-import NotesActiveList from "./NotesActiveList";
-import NotesArchiveList from "./NotesArchiveList";
+import NotesLists from "./NotesLists";
 
 class NotesApp extends React.Component {
 	constructor(props) {
@@ -17,12 +16,11 @@ class NotesApp extends React.Component {
 		return (
 			<div className="notes-app">
 				<NotesNavbar />
-				<h1>Add Notes</h1>
 
-				<NotesInput />
-
-				<NotesActiveList />
-				<NotesArchiveList />
+				<div className="notes-body">
+					<NotesInput />
+					<NotesLists />
+				</div>
 
 			</div>
 		)

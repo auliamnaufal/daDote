@@ -12,11 +12,22 @@ class NotesInput extends React.Component {
 
 	render() {
 		return (
-			<form className="notes-input">
-				<input type="text" placeholder="Your notes title..." />
-				<textarea type="text" placeholder="Type your notes here" />
-				<input type="submit" value="Add Note" />
-			</form>
+			<div className="notes-input">
+				<div className="notes-input__body">
+					<h1>Add Notes</h1>
+					<form className="notes-input__form">
+						<div>
+							<label htmlFor="title">Title</label>
+							<input type="text" placeholder="Your notes title..." name="title" />
+						</div>
+						<div>
+							<label htmlFor="notes">Notes</label>
+							<textarea type="text" placeholder="Type your notes here" name="notes" rows={10} />
+						</div>
+						<input type="submit" value="Add Note" />
+					</form>
+				</div>
+			</div>
 		)
 	}
 }
