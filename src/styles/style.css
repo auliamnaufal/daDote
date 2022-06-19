@@ -222,3 +222,10 @@ body {
   word-wrap: break-word
 
 }
+
+
+@media only screen and (max-width: 461px) {
+  .notes-body {
+    height: max-content
+  }
+}
