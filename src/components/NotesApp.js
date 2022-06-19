@@ -9,14 +9,37 @@ class NotesApp extends React.Component {
 		super(props)
 		this.state = {
 			notes: getInitialData(),
-			selectedOptions: "active"
+			selectedOptions: "active",
+			search: ''
 		}
 
 		this.onAddNoteEventHandler = this.onAddNoteEventHandler.bind(this)
 		this.onNoteDeleteEventHandler = this.onNoteDeleteEventHandler.bind(this)
 		this.onValueChange = this.onValueChange.bind(this);
 		this.onNoteArchiveEventHander = this.onNoteArchiveEventHander.bind(this);
+		this.onSearchValueChangeEventHandler = this.onSearchValueChangeEventHandler.bind(this);
 
+	}
+
+	onSearchValueChangeEventHandler(event) {
+		this.setState((prevState) => {
+			return {
+				...prevState,
+				search: event.target.value
+			}
+		})
+		// const array = [...this.state.notes]
+		// const filterredState = array.filter((note) => note.title.toLowerCase().includes(event.target.value))
+		// if (filterredState.length <= 0) {
+		// 	this.setState({
+		// 		notes: this.state.notes
+		// 	})
+		// 	console.log(this.state.notes)
+		// } else {
+		// 	this.setState({
+		// 		notes: filterredState
+		// 	})
+		// }
 	}
 
 	onValueChange(event) {
@@ -65,10 +88,10 @@ class NotesApp extends React.Component {
 	render() {
 		return (
 			<div className="notes-app">
-				<NotesNavbar />
+				<NotesNavbar searchValue={this.state.search} onSearchValueChangeEventHandler={this.onSearchValueChangeEventHandler}  />
 				<div className="notes-body">
 					<NotesInput addNotes={this.onAddNoteEventHandler} changeOptions={this.onValueChange} />
-					<NotesLists notes={this.state.notes} onDelete={this.onNoteDeleteEventHandler} listOptions={this.state.selectedOptions} onArchive={this.onNoteArchiveEventHander} />
+					<NotesLists notes={this.state.notes} onDelete={this.onNoteDeleteEventHandler} listOptions={this.state.selectedOptions} onArchive={this.onNoteArchiveEventHander} searchValue={this.state.search} />
 				</div>
 
 			</div>
