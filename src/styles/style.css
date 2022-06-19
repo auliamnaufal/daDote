@@ -95,11 +95,22 @@ body {
   flex-direction: column;
   justify-content: space-between;
   margin-bottom: 10vh;
+  position: relative;
 }
 
 .notes-input__form div {
   display: flex;
   flex-direction: column;
+}
+
+.notes-input__form div .title-length {
+  font-size: .8rem;
+  font-weight: 400;
+  color: rgb(135, 135, 135);
+  margin-bottom: 5px;
+  text-align: right;
+  position: absolute;
+  right: 0;
 }
 
 .notes-input__form div label {

@@ -56,6 +56,7 @@ class NotesInput extends React.Component {
 					<form className="notes-input__form" onSubmit={this.onSubmitEventHandler}>
 						<div>
 							<label htmlFor="title">Title</label>
+							<p className="title-length">Character left: </p>
 							<input type="text" placeholder="Your notes title..." name="title" value={this.state.title} onChange={this.onTitleChangeEventHandler} />
 						</div>
 						<div>
