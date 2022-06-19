@@ -1,5 +1,5 @@
 import React from "react";
-import { getInitialData, showFormattedDate } from "../utils/index"
+import { getInitialData } from "../utils/index"
 import NotesNavbar from "./NotesNavbar";
 import NotesInput from "./NotesInput";
 import NotesLists from "./NotesLists";
@@ -10,15 +10,33 @@ class NotesApp extends React.Component {
 		this.state = {
 			notes: getInitialData(),
 		}
+
+		this.onAddNoteEventHandler = this.onAddNoteEventHandler.bind(this)
+	}
+
+	onAddNoteEventHandler({ title, body }) {
+		this.setState((prevState) => {
+			return {
+				notes: [
+					...prevState.notes,
+					{
+						id: +new Date(),
+						title,
+						body,
+						createdAt: new Date().toISOString(),
+						archived: false
+					}
+				]
+			}
+		})
 	}
 
 	render() {
 		return (
 			<div className="notes-app">
 				<NotesNavbar />
-
 				<div className="notes-body">
-					<NotesInput />
+					<NotesInput addNotes={this.onAddNoteEventHandler} />
 					<NotesLists notes={this.state.notes} />
 				</div>
 
