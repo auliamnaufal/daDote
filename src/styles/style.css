@@ -10,6 +10,8 @@ body {
 
 .notes-app {
   width: 100vw;
+  max-width: 2200px;
+  margin: auto;
   padding: 30px;
 }
 
@@ -28,7 +30,8 @@ body {
 }
 
 .notes-navbar input {
-  width: 300px;
+  width: 50%;
+  max-width: 300px;
   padding: 10px;
   border: 1px solid #000;
   outline: none;
