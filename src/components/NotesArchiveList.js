@@ -1,12 +1,17 @@
 import React from "react";
 import NotesItem from "./NotesItem";
 
-const NotesArchiveList = () => {
+const NotesArchiveList = ({ notes, onDelete}) => {
 	return (
 		<div className="notes-list">
 			<h2>Archived Notes</h2>
-			<NotesItem title={"Coba"} body={"COBALAGI"} createdAt={"Kamis, 14 April 2022"} />
-			<NotesItem title={"Coba"} body={"COBALAGI"} createdAt={"Kamis, 14 April 2022"} />
+			<div className="notes-list-item">
+				{
+					notes.map((note) => (
+						<NotesItem {...note} key={note.id} onDelete={onDelete} />
+					))
+				}
+			</div>
 		</div>
 		
 	)

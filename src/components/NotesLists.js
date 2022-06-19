@@ -7,7 +7,7 @@ const NotesLists = ({ notes, onDelete }) => {
 		<div className="notes-lists">
 
 			<NotesActiveList notes={notes} onDelete={onDelete}  />
-			{/* <NotesArchiveList /> */}
+			<NotesArchiveList notes={notes} onDelete={onDelete}  />
 		</div>
 		
 	)

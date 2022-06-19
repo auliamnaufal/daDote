@@ -57,19 +57,44 @@ body {
   background-color: #fff;
   border-radius: 10px;
   padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .notes-input__body h1 {
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 40px;
+}
+
+.notes-input__display {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.notes-input__display input {
+  display: none;
+}
+
+.notes-input__display label {
+  width: 100px;
+  padding: 10px;
+  border: 1px solid #000;
+  text-align: center;
+  transition: all .1s ease;
+}
+
+.notes-input__display input:checked + label {
+  background-color: #000;
+  color: #fff;
 }
 
 .notes-input__form {
   display: flex;
   flex-direction: column;
-  height: 150px;
   justify-content: space-between;
+  margin-bottom: 10vh;
 }
 
 .notes-input__form div {

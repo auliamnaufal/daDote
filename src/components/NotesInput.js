@@ -59,6 +59,13 @@ class NotesInput extends React.Component {
 						</div>
 						<input type="submit" value="Add Note" />
 					</form>
+
+					<div className="notes-input__display">
+						<input type="radio" name="show-list" id="active" />
+						<label htmlFor="active">Active</label>
+						<input type="radio" name="show-list" id="archive" />
+						<label htmlFor="archive">Archive</label>
+					</div>
 				</div>
 			</div>
 		)
