@@ -9,11 +9,20 @@ class NotesApp extends React.Component {
 		super(props)
 		this.state = {
 			notes: getInitialData(),
+			selectedOptions: "active"
 		}
 
 		this.onAddNoteEventHandler = this.onAddNoteEventHandler.bind(this)
 		this.onNoteDeleteEventHandler = this.onNoteDeleteEventHandler.bind(this)
+		this.onValueChange = this.onValueChange.bind(this);
 	}
+
+	onValueChange(event) {
+    this.setState({
+      selectedOptions: event.target.value
+    });
+		console.log(this.state)
+  }
 
 	onNoteDeleteEventHandler(id) {
 		const array = [...this.state.notes]
@@ -48,8 +57,8 @@ class NotesApp extends React.Component {
 			<div className="notes-app">
 				<NotesNavbar />
 				<div className="notes-body">
-					<NotesInput addNotes={this.onAddNoteEventHandler} />
-					<NotesLists notes={this.state.notes} onDelete={this.onNoteDeleteEventHandler} />
+					<NotesInput addNotes={this.onAddNoteEventHandler} changeOptions={this.onValueChange} />
+					<NotesLists notes={this.state.notes} onDelete={this.onNoteDeleteEventHandler} listOptions={this.state.selectedOptions} />
 				</div>
 
 			</div>

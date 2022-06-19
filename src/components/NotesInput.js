@@ -12,7 +12,12 @@ class NotesInput extends React.Component {
 		this.onTitleChangeEventHandler = this.onTitleChangeEventHandler.bind(this)
 		this.onBodyChangeEventHandler = this.onBodyChangeEventHandler.bind(this)
 		this.onSubmitEventHandler = this.onSubmitEventHandler.bind(this)
+		this.onValueChange = this.onValueChange.bind(this);
 	}
+
+	onValueChange(event) {
+    this.props.changeOptions(event)
+  }
 
 	onTitleChangeEventHandler(e) {
 		this.setState((prevState) => {
@@ -61,9 +66,9 @@ class NotesInput extends React.Component {
 					</form>
 
 					<div className="notes-input__display">
-						<input type="radio" name="show-list" id="active" />
+						<input type="radio" name="show-list" id="active" value={"active"} onChange={this.onValueChange} defaultChecked />
 						<label htmlFor="active">Active</label>
-						<input type="radio" name="show-list" id="archive" />
+						<input type="radio" name="show-list" id="archive" value={"archive"} onChange={this.onValueChange} />
 						<label htmlFor="archive">Archive</label>
 					</div>
 				</div>
