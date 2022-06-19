@@ -19,7 +19,7 @@ class NotesApp extends React.Component {
 
 				<div className="notes-body">
 					<NotesInput />
-					<NotesLists />
+					<NotesLists notes={this.state.notes} />
 				</div>
 
 			</div>

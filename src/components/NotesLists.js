@@ -2,11 +2,11 @@ import React from "react";
 import NotesActiveList from "./NotesActiveList";
 import NotesArchiveList from "./NotesArchiveList";
 
-const NotesLists = () => {
+const NotesLists = ({ notes }) => {
 	return (
 		<div className="notes-lists">
 
-			<NotesActiveList />
+			<NotesActiveList notes={notes}  />
 			{/* <NotesArchiveList /> */}
 		</div>
 		
