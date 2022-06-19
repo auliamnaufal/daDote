@@ -7,6 +7,7 @@ class NotesInput extends React.Component {
 		this.state = {
 			title: "",
 			body: "",
+			titleLength: 50,
 		}
 
 		this.onTitleChangeEventHandler = this.onTitleChangeEventHandler.bind(this)
@@ -23,7 +24,8 @@ class NotesInput extends React.Component {
 		this.setState((prevState) => {
 			return {
 				...prevState,
-				title: e.target.value
+				title: e.target.value,
+				titleLength: 50 - e.target.value.length
 			}
 		})
 	}
@@ -56,8 +58,8 @@ class NotesInput extends React.Component {
 					<form className="notes-input__form" onSubmit={this.onSubmitEventHandler}>
 						<div>
 							<label htmlFor="title">Title</label>
-							<p className="title-length">Character left: </p>
-							<input type="text" placeholder="Your notes title..." name="title" value={this.state.title} onChange={this.onTitleChangeEventHandler} />
+							<p className="title-length">Character left: {this.state.titleLength} </p>
+							<input type="text" placeholder="Your notes title..." name="title" value={this.state.title} onChange={this.onTitleChangeEventHandler} maxLength={50} />
 						</div>
 						<div>
 							<label htmlFor="notes">Notes</label>
