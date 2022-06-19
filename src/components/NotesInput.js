@@ -37,8 +37,8 @@ class NotesInput extends React.Component {
 		this.props.addNotes(this.state)
 		this.setState(() => {
 			return {
-				title: '',
-				body: ''
+				title: "",
+				body: "",
 			}
 		})
 	}

@@ -12,6 +12,18 @@ class NotesApp extends React.Component {
 		}
 
 		this.onAddNoteEventHandler = this.onAddNoteEventHandler.bind(this)
+		this.onNoteDeleteEventHandler = this.onNoteDeleteEventHandler.bind(this)
+	}
+
+	onNoteDeleteEventHandler(id) {
+		const array = [...this.state.notes]
+		const targetNote = this.state.notes.findIndex((note) => note.id === id)
+		array.splice(targetNote, 1)
+		this.setState(() => {
+			return {
+				notes: array
+			}
+		})
 	}
 
 	onAddNoteEventHandler({ title, body }) {
@@ -37,7 +49,7 @@ class NotesApp extends React.Component {
 				<NotesNavbar />
 				<div className="notes-body">
 					<NotesInput addNotes={this.onAddNoteEventHandler} />
-					<NotesLists notes={this.state.notes} />
+					<NotesLists notes={this.state.notes} onDelete={this.onNoteDeleteEventHandler} />
 				</div>
 
 			</div>
