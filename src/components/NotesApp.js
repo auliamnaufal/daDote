@@ -15,6 +15,8 @@ class NotesApp extends React.Component {
 		this.onAddNoteEventHandler = this.onAddNoteEventHandler.bind(this)
 		this.onNoteDeleteEventHandler = this.onNoteDeleteEventHandler.bind(this)
 		this.onValueChange = this.onValueChange.bind(this);
+		this.onNoteArchiveEventHander = this.onNoteArchiveEventHander.bind(this);
+
 	}
 
 	onValueChange(event) {
@@ -52,13 +54,21 @@ class NotesApp extends React.Component {
 		})
 	}
 
+	onNoteArchiveEventHander(id) {
+		const array = [...this.state.notes]
+		let targetIndex = array.findIndex((item) => item.id === id)
+		array[targetIndex].archived = !array[targetIndex].archived
+		this.setState({ array })
+		console.log(this.state)
+	}
+
 	render() {
 		return (
 			<div className="notes-app">
 				<NotesNavbar />
 				<div className="notes-body">
 					<NotesInput addNotes={this.onAddNoteEventHandler} changeOptions={this.onValueChange} />
-					<NotesLists notes={this.state.notes} onDelete={this.onNoteDeleteEventHandler} listOptions={this.state.selectedOptions} />
+					<NotesLists notes={this.state.notes} onDelete={this.onNoteDeleteEventHandler} listOptions={this.state.selectedOptions} onArchive={this.onNoteArchiveEventHander} />
 				</div>
 
 			</div>
