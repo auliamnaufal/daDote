@@ -20,27 +20,27 @@ class NotesInput extends React.Component {
     this.props.changeOptions(event)
   }
 
-	onTitleChangeEventHandler(e) {
+	onTitleChangeEventHandler(event) {
 		this.setState((prevState) => {
 			return {
 				...prevState,
-				title: e.target.value,
-				titleLength: 50 - e.target.value.length
+				title: event.target.value,
+				titleLength: 50 - event.target.value.length
 			}
 		})
 	}
 
-	onBodyChangeEventHandler(e) {
+	onBodyChangeEventHandler(event) {
 		this.setState((prevState) => {
 			return {
 				...prevState,
-				body: e.target.value
+				body: event.target.value
 			}
 		})
 	}
 
-	onSubmitEventHandler(e) {
-		e.preventDefault()
+	onSubmitEventHandler(event) {
+		event.preventDefault()
 		this.props.addNotes(this.state)
 		this.setState(() => {
 			return {

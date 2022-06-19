@@ -28,18 +28,6 @@ class NotesApp extends React.Component {
 				search: event.target.value
 			}
 		})
-		// const array = [...this.state.notes]
-		// const filterredState = array.filter((note) => note.title.toLowerCase().includes(event.target.value))
-		// if (filterredState.length <= 0) {
-		// 	this.setState({
-		// 		notes: this.state.notes
-		// 	})
-		// 	console.log(this.state.notes)
-		// } else {
-		// 	this.setState({
-		// 		notes: filterredState
-		// 	})
-		// }
 	}
 
 	onValueChange(event) {
