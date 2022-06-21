@@ -59,11 +59,11 @@ class NotesInput extends React.Component {
 						<div>
 							<label htmlFor="title">Title</label>
 							<p className="title-length">Character left: {this.state.titleLength} </p>
-							<input type="text" placeholder="Your notes title..." name="title" value={this.state.title} onChange={this.onTitleChangeEventHandler} maxLength={50} />
+							<input type="text" placeholder="Your notes title..." name="title" value={this.state.title} onChange={this.onTitleChangeEventHandler} maxLength={50} required />
 						</div>
 						<div>
 							<label htmlFor="notes">Notes</label>
-							<textarea type="text" placeholder="Type your notes here" name="notes" rows={10} value={this.state.body} onChange={this.onBodyChangeEventHandler} />
+							<textarea type="text" placeholder="Type your notes here" name="notes" rows={10} value={this.state.body} onChange={this.onBodyChangeEventHandler} required />
 						</div>
 						<input type="submit" value="Add Note" />
 					</form>
